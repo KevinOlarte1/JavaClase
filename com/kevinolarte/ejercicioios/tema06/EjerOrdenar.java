@@ -31,6 +31,11 @@ public class EjerOrdenar {
           }
          */
     }
+
+    /**
+     * Metodo para ordeanr el array de menor a mayor
+     * @param num array donde se haran los cambios
+     */
     public static void ordenarArrayMa(int num[]){
         int tmp = 0;
         for (int i = 0; i < num.length-1; i++) {
@@ -44,6 +49,11 @@ public class EjerOrdenar {
             
         }
     }
+    
+    /**
+     * Metodo para ordenar el array de mayor a menor
+     * @param num array donde se haran los cambios
+     */
     public static void ordenarArrayMm(int num[]){
         int tmp = 0;
         for (int i = 0; i < num.length-1; i++) {
