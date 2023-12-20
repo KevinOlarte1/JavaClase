@@ -1,7 +1,6 @@
 package com.kevinolarte.ejercicioios.tema06;
 
 import com.kevinolarte.lib.*;
-import java.util.Arrays;
 
 public class EjerOrdenar {
 
@@ -49,7 +48,7 @@ public class EjerOrdenar {
             
         }
     }
-    
+
     /**
      * Metodo para ordenar el array de mayor a menor
      * @param num array donde se haran los cambios

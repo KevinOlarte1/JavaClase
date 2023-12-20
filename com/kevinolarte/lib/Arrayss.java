@@ -36,4 +36,17 @@ public class Arrayss {
             array[i] = Randoms.rnd.nextInt(min, max);
         }
     }
+    /**
+     * Metodo para obtener un array contando las veces que toca el num 
+     * @param nums array dodne se buscara los numeros
+     * @param max numero maximo que puede tener el array.
+     * @return array con las veces que se repite un numero.
+     */
+    public static int[] ArrayOrdenadorCont (int nums[], int max){
+        int numReps[] = new int[max];
+        for (int i : nums) {
+            numReps[i]++;
+        }
+        return numReps;
+    }
 }
