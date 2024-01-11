@@ -1,42 +1,47 @@
+import com.kevinolarte.lib.Arrayss;
+import com.kevinolarte.lib.Input;
+import com.kevinolarte.lib.Matriz;
 public class Pruebas {
-    //#region Ejercicio de prueba args
-    /**
-     * Ejercicio de prueba que coje los parametros añadidos con la ejecición de archivo
-     * @param args parametros tipo String de un array.
-     */
-    public static void args(String[] args){
-        if (args.length < 2) {
-            System.out.println("ERROR: El ingreso debe tener al menos 2 numeros");
-            System.exit(1);
-        }
-        for (String string : args) {
-            if (!contieneCaracteres(string)){
-                System.out.println("ERROR: El ingreso debe ser tipo numerico");
-                System.exit(1); 
-            } 
-                
-        }
-
-        int [] numeros = new int[args.length - 1];
-        for (int i = 0; i < numeros.length; i++) {
-            numeros[i] = Integer.parseInt(args[i]);
-        }
-        for (int i : numeros) {
-            if (i > Integer.parseInt(args[args.length - 1])) {
-                System.out.println(i);
+   public static void main(String[] args) {
+        int nums[][] = new int[4][3];
+        
+        System.out.println(nums[0].length);
+        
+   }
+   public static void seleccion(int nums[]){
+    int max = Integer.MAX_VALUE;
+    int tmp = 0;
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i; j < nums.length; j++) {
+                if (nums[j] < max) {
+                    tmp = j;
+                    max = nums[j];
+                }
             }
+            nums[tmp] = nums[i];
+            nums[i] = max;
+            max = Integer.MAX_VALUE;
+            
         }
-    }
+   }
+   public static void insert(int nums[]){
+     int tmp = 0;
+        int tmp1 = 0;
+        boolean mover = false;
+        for (int i : nums) {
+            System.out.print( " " + i + " ");
+        }
+        System.out.println(" ");
+        for (int i = 1; i < nums.length; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print("s");
+                
+            }
+            System.out.println(" ");
+        }
+        for (int i : nums) {
+            System.out.print( " " + i + " ");
+        }
+   }
 
-    /**
-     * Metodo para comprobar si tiene algun caracter que no sea un numero.
-     * @param palabra palabra a comprobar si tiene caracter
-     * @return devuelve un booleano comprobando si tiene algun caracter.
-     */
-    public static boolean contieneCaracteres(String palabra){
-        boolean verdad = palabra.matches("\\d+");
-        return verdad;
-    }
-
-    //#endregion
 }

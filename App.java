@@ -1,9 +1,13 @@
 
 import com.kevinolarte.ejercicioios.tema06.*;
+import com.kevinolarte.lib.Matriz;
 public class App {
 
     public static void main(String[] args) {
-        EjerCountingShort e = new EjerCountingShort();
+        Ejer26 es = new Ejer26();
+
 
     }
+
+    
 }

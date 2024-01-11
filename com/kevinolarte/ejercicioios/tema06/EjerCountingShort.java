@@ -15,7 +15,7 @@ public class EjerCountingShort {
         
 
         
-        int numReps[] = Arrayss.ArrayOrdenadorCont(nums, 31);
+        int numReps[] = Arrayss.ArrayCountingShort(nums, 31);
 
         System.out.println("Desp: ");
         for (int i = 0; i < numReps.length; i++) {

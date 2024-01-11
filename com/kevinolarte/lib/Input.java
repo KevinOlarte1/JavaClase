@@ -10,7 +10,7 @@ public class Input {
      * @param mensaje mensaje que mostrara, por defecto pon " ".
      * @return devuelve el num real ingresado.
      */
-    public static String pedirIngreso(String mensaje){
+    public static String pedirString(String mensaje){
         String ingreso = "";
         mensaje = mensaje == " " ? "Ingresa algo " : mensaje;
         System.out.println(mensaje);
