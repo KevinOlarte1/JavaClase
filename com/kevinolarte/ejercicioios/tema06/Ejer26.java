@@ -50,7 +50,7 @@ public class Ejer26 {
         
         System.out.println("i) Guardar en la columna 8 el total de todas las anteriores. \n \n");
         Matriz1.print(matriz);
-        matriz = matrizValoresFila(matrizTotalFila);
+        matriz = matrizValoresFila(matriz);
         Matriz.verMatriz(matriz);
         
     }
@@ -62,7 +62,7 @@ public class Ejer26 {
     public static int[][] matrizValoresFila(int matriz[][]){
         if (!Matriz1.regular(matriz)) 
             return null;
-        int matrizN[][] = new int[matriz.length][matriz[0].length + 1];
+        int matrizN[][] = new int[matriz.length][matriz[0].length];
         int totalFila[] = Matriz1.arraySumFilas(matriz);
         for (int i = 0; i < matrizN.length; i++) {
             for (int j = 0; j < matrizN[i].length-1; j++) {
