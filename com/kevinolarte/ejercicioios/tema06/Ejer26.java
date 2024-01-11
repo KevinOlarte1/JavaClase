@@ -46,12 +46,13 @@ public class Ejer26 {
         // H----------------
         System.out.println("h) La columna que nos indique el usuario" + "\n");
         y = Input.pedirInt("Dime la columna");
-        System.out.println(Matriz.verColumnaSelecionadaMatriz(matriz, y) + "\n");
-        /* 
+        System.out.println(Matriz1.verColumnaSelecionadaMatriz(matriz, y) + "\n");
+        
         System.out.println("i) Guardar en la columna 8 el total de todas las anteriores. \n \n");
-        guardarTotalColumnaFinal(matriz);
+        Matriz1.print(matriz);
+        matriz = matrizValoresFila(matrizTotalFila);
         Matriz.verMatriz(matriz);
-        */
+        
     }
     /**
      * Metodo para crear una matriz con al final el valor total de las filas

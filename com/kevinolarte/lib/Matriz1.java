@@ -181,6 +181,25 @@ public class Matriz1 {
     }
 
     /**
+     * Metodo para mostrar los valores de una columna en concreta
+     * @param matriz matriz donde se sacara la fila
+     * @param fila la fila a buscar
+     * @return valores de la fila.
+     */
+    public static String verColumnaSelecionadaMatriz(int matriz[][], int columna){
+        String visual = "";
+
+        if (columna < 0 || columna >= matriz[0].length) 
+            return "Error!";
+        int nums[] = arrayColumnaSelect(matriz, columna);
+        visual += "Columna " + columna + ": ";
+        for (int i = 0; i < nums.length; i++) {
+            visual += nums[i] + " ";
+        }
+        return visual;
+    }
+
+    /**
      * Metodo para crear un arrray con una fiual de una matriz
      * @param matriz
      * @param fila
@@ -195,6 +214,24 @@ public class Matriz1 {
         }
         return nums;
     }
+
+    /**
+     * Metodo para crear un arrray con una fiual de una matriz
+     * @param matriz
+     * @param fila
+     * @return
+     */
+    public static int[] arrayColumnaSelect(int matriz [][], int columna){
+        if (columna < 0 || columna > matriz[0].length) 
+            return null;
+        int nums [] = new int[matriz.length];
+        for (int i = 0; i < matriz.length; i++) {
+            nums[i] = matriz[i][columna];
+        }
+        return nums;
+    }
+
+
     
     
 }
