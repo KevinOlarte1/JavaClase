@@ -4,7 +4,9 @@ import com.kevinolarte.lib.Matriz;
 public class App {
 
     public static void main(String[] args) {
-        Ejer27 es = new Ejer27();
+        Jugador jugador1 = new Jugador("Pepe", 1, 1,1,1,1,1);
+        jugador1.entrenar();
+        System.out.println(jugador1.getStats());
 
 
     }

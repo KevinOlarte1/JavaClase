@@ -1,11 +1,17 @@
 import com.kevinolarte.lib.Arrayss;
 import com.kevinolarte.lib.Input;
 import com.kevinolarte.lib.Matriz;
+import com.kevinolarte.lib.Randoms;
 public class Pruebas {
    public static void main(String[] args) {
-        int nums[][] = new int[4][3];
-        
-        System.out.println(nums[0].length);
+        int alt;
+        do{
+            alt = Randoms.rnd.nextInt(0,5);
+            if (alt  == 0)
+                break; 
+                
+            
+        }while(true);
         
    }
    public static void seleccion(int nums[]){

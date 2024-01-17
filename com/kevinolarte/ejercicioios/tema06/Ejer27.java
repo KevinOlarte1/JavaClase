@@ -20,7 +20,7 @@ public class Ejer27 {
         System.out.println(" ");
         System.out.println("----------");
         
-        int m[][] = new int[50][20];
+        int m[][] = new int[v.length][p.length];
         for (int i = 0; i < m.length; i++) {
             for (int j = 0; j < m[i].length; j++) {
                 m[i][j] = p[j]* v[i];
