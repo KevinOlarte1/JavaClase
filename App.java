@@ -4,7 +4,7 @@ import com.kevinolarte.lib.Matriz;
 public class App {
 
     public static void main(String[] args) {
-        Ejer26 es = new Ejer26();
+        Ejer27 es = new Ejer27();
 
 
     }
