@@ -1,14 +1,14 @@
-import com.kevinolarte.lib.Arrayss;
-import com.kevinolarte.lib.Input;
-import com.kevinolarte.lib.Matriz;
+//import com.kevinolarte.lib.Arrayss;
+//import com.kevinolarte.lib.Input;
+//import com.kevinolarte.lib.Matriz;
+import java.text.DecimalFormat;
+
 import com.kevinolarte.lib.Randoms;
 public class Pruebas {
    public static void main(String[] args) {
-        int alt;
+        
         do{
-            alt = Randoms.rnd.nextInt(0,5);
-            if (alt  == 0)
-                break; 
+            System.out.println(Float.parseFloat( new DecimalFormat("#.##").format(Randoms.rnd.nextFloat() * 2)));
                 
             
         }while(true);
@@ -31,9 +31,6 @@ public class Pruebas {
         }
    }
    public static void insert(int nums[]){
-     int tmp = 0;
-        int tmp1 = 0;
-        boolean mover = false;
         for (int i : nums) {
             System.out.print( " " + i + " ");
         }

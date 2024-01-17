@@ -132,11 +132,11 @@ public class Matriz {
      */
     public static double valorMediaMatriz(int matriz[][]){
         int sum = 0;
-        int cont = 0;
+        //int cont = 0;
         for (int[] x : matriz) {
             for (int x1 : x) {
                 sum += x1;
-                cont++;
+                //cont++;
             }
         }                       //  ------------cont-------------
         return ( (double)sum / (matriz.length * matriz[0].length) );
