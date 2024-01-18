@@ -7,11 +7,10 @@ import com.kevinolarte.lib.Randoms;
 public class Pruebas {
    public static void main(String[] args) {
         
-        do{
-            System.out.println(Float.parseFloat( new DecimalFormat("#.##").format(Randoms.rnd.nextFloat() * 2)));
-                
-            
-        }while(true);
+       float sas = 0.999999999f;
+       if (sas  != 10) {
+            System.out.println("sas");
+       }
         
    }
    public static void seleccion(int nums[]){

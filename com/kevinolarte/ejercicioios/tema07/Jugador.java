@@ -4,7 +4,11 @@ import com.kevinolarte.lib.Randoms;
 
 public class Jugador {
 
-    private static  float DEFAULT = 50;
+    private static int contadorIds = 0;
+    
+    private static  float DEFAULT = 1;
+
+    private int id;
 
     private  String nombre;
 
@@ -23,6 +27,7 @@ public class Jugador {
     private float precio;
 
     public Jugador(String nombre, float portero, float defensa, float pase, float regate, float tiro, float estadoForma) {
+        this.id = ++contadorIds;
         this.nombre = nombre;
         this.portero = portero;
         this.defensa = defensa;
@@ -30,43 +35,91 @@ public class Jugador {
         this.regate = regate;
         this.tiro = tiro;
         this.estadoForma = estadoForma;
+        this.precio = 2000.0f;
+        calcularPrecio();
+    }
+
+    public Jugador(String nombre){
+        this(nombre, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
     }
 
     public String getStats(){
         StringBuilder stb = new StringBuilder();
         stb.append(getNombre());
         stb.append("\n");
+        
+        stb.append("id:");
+        stb.append(id);
+        stb.append("\n");
 
         stb.append("portero: ");
-        stb.append(getPortero());
+        stb.append(portero);
         stb.append("\n");
         
         stb.append("Defensa: ");
-        stb.append(getDefensa());
+        stb.append(defensa);
         stb.append("\n");
         
         stb.append("Pase: ");
-        stb.append(getPase());
+        stb.append(pase);
         stb.append("\n");
         
         stb.append("Regate: ");
-        stb.append(getRegate());
+        stb.append(regate);
         stb.append("\n");
         
         stb.append("Tiro: ");
-        stb.append(getTiro());
+        stb.append(tiro);
         stb.append("\n");
         
         stb.append("EstadoForma: ");
-        stb.append(getEstadoForma());
+        stb.append(estadoForma);
+        stb.append("\n");
+
+        stb.append("precio: ");
+        stb.append(precio);
         
         return stb.toString();
         
 
     }
 
-    public Jugador(String nombre){
-        this(nombre, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT);
+    
+    
+    private void calcularPrecio(){
+        float puntosTotal = this.portero + this.defensa + this.pase + this.regate + this.tiro + this.estadoForma;
+        if (puntosTotal <= 10) {
+            this.precio += 6000;
+        }
+        else if (puntosTotal <= 20) {
+            this.precio += 8000;
+        }
+        else if (puntosTotal <= 30) {
+            this.precio += 10000;
+        }
+        else if (puntosTotal <= 40) {
+            this.precio += 12000;
+        }
+        else if (puntosTotal <= 50) {
+            this.precio += 14000;
+        }
+        else if (puntosTotal <= 60) {
+            this.precio += 16000;
+        }
+        else if (puntosTotal <= 70) {
+            this.precio += 20000;
+        }
+        else if (puntosTotal <= 80) {
+            this.precio += 240000;
+        }
+        else if (puntosTotal <= 90) {
+            this.precio += 28000;
+        }
+        else if (puntosTotal <= 100) {
+            this.precio += 40000;
+        }
+        
+
     }
 
     public void entrenar(){
@@ -98,25 +151,17 @@ public class Jugador {
 
     
 
+    
+
+    
+    
+ //#region Override
+
     @Override
-    public String toString() {
-        return "Jugador [nombre=" + nombre + ", portero=" + portero + ", defensa=" + defensa + ", pase=" + pase
-                + ", regate=" + regate + ", tiro=" + tiro + ", estadoForma=" + estadoForma + "]";
-    }
-
-    
-
-    
-
-    
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (@Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
+        result = prime * result + id;
         result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
         result = prime * result + Float.floatToIntBits(portero);
         result = prime * result + Float.floatToIntBits(defensa);
@@ -137,6 +182,8 @@ public class Jugador {
         if (getClass() != obj.getClass())
             return false;
         Jugador other = (Jugador) obj;
+        if (id != other.id)
+            return false;
         if (nombre == null) {
             if (other.nombre != null)
                 return false;
@@ -159,34 +206,28 @@ public class Jugador {
         return true;
     }
 
-        getClass() != obj.getClass())
-            return false;
-
-        Jugador other = (Jugador) obj;
-        
-        if (nombre == null) {
-            if (other.nombre != null)
-                return false;
-        } else if (!nombre.equals(other.nombre))
-            return false;
-        if (portero != other.portero)
-            return false;
-        if (defensa != other.defensa)
-            return false;
-        if (pase != other.pase)
-            return false;
-        if (regate != other.regate)
-            return false;
-        if (tiro != other.tiro)
-            return false;
-        if (estadoForma != other.estadoForma)
-            return false;
-        return true;
+    @Override
+    public String toString() {
+        return "Jugador [id=" + id + ", nombre=" + nombre + ", portero=" + portero + ", defensa=" + defensa + ", pase="
+                + pase + ", regate=" + regate + ", tiro=" + tiro + ", estadoForma=" + estadoForma + ", precio=" + precio
+                + "]";
     }
 
+    //#endregion Override
+
+    
+
     //#region getters
+    public static int getContadorIds(){
+        return getContadorIds();
+    }
+
     public static float getDefault() {
         return DEFAULT;
+    }
+    
+    public int id(){
+        return id;
     }
 
     public String getNombre() {
@@ -216,43 +257,13 @@ public class Jugador {
     public float getEstadoForma() {
         return estadoForma;
     }
-    //#endregion
 
-    //#region setters
-    public static void setDEFAULT(float dEFAULT) {
-        DEFAULT = dEFAULT;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setPortero(float portero) {
-        this.portero = portero;
-    }
-
-    public void setDefensa(float defensa) {
-        this.defensa = defensa;
-    }
-
-    public void setPase(float pase) {
-        this.pase = pase;
-    }
-
-    public void setRegate(float regate) {
-        this.regate = regate;
-    }
-
-    public void setTiro(float tiro) {
-        this.tiro = tiro;
-    }
-
-    public void setEstadoForma(float estadoForma) {
-        this.estadoForma = estadoForma;
+    public float getPrecio(){
+        return precio;
     }
     //#endregion
+
     
-
 
     
 }
