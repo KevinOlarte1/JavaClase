@@ -26,6 +26,8 @@ public class Jugador {
 
     private float precio;
 
+    private String equipo;
+
     public Jugador(String nombre, float portero, float defensa, float pase, float regate, float tiro, float estadoForma) {
         this.id = ++contadorIds;
         this.nombre = nombre;
@@ -36,6 +38,7 @@ public class Jugador {
         this.tiro = tiro;
         this.estadoForma = estadoForma;
         this.precio = 2000.0f;
+        this.equipo = null;
         calcularPrecio();
     }
 
@@ -78,7 +81,10 @@ public class Jugador {
 
         stb.append("precio: ");
         stb.append(precio);
-        
+        stb.append("\n");
+
+        stb.append("Equipo: ");
+        stb.append(equipo);
         return stb.toString();
         
 
@@ -154,8 +160,17 @@ public class Jugador {
     
 
     
+
     
- //#region Override
+    
+    //#region Override
+
+    @Override
+    public String toString() {
+        return "Jugador [id=" + id + ", nombre=" + nombre + ", portero=" + portero + ", defensa=" + defensa + ", pase="
+                + pase + ", regate=" + regate + ", tiro=" + tiro + ", estadoForma=" + estadoForma + ", precio=" + precio
+                + ", equipo=" + equipo + "]";
+    }
 
     @Override
     public int hashCode() {
@@ -170,6 +185,7 @@ public class Jugador {
         result = prime * result + Float.floatToIntBits(tiro);
         result = prime * result + Float.floatToIntBits(estadoForma);
         result = prime * result + Float.floatToIntBits(precio);
+        result = prime * result + ((equipo == null) ? 0 : equipo.hashCode());
         return result;
     }
 
@@ -203,14 +219,12 @@ public class Jugador {
             return false;
         if (Float.floatToIntBits(precio) != Float.floatToIntBits(other.precio))
             return false;
+        if (equipo == null) {
+            if (other.equipo != null)
+                return false;
+        } else if (!equipo.equals(other.equipo))
+            return false;
         return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Jugador [id=" + id + ", nombre=" + nombre + ", portero=" + portero + ", defensa=" + defensa + ", pase="
-                + pase + ", regate=" + regate + ", tiro=" + tiro + ", estadoForma=" + estadoForma + ", precio=" + precio
-                + "]";
     }
 
     //#endregion Override
@@ -221,6 +235,8 @@ public class Jugador {
     public static int getContadorIds(){
         return getContadorIds();
     }
+
+   
 
     public static float getDefault() {
         return DEFAULT;
@@ -261,7 +277,18 @@ public class Jugador {
     public float getPrecio(){
         return precio;
     }
+
+    public String getEquipo(){
+        return equipo;
+    }
     //#endregion
+
+    //#region setter
+    public void setEquipo(String equipo) {
+        this.equipo = equipo;
+    }
+
+    //#endregion setter
 
     
 
